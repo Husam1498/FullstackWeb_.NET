@@ -1,0 +1,85 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LoginLayout";
+}
+
+
+<div class="container2">
+    <h1 class="title-form">Kayıt Ol</h1>
+    
+    <div class="web-login">
+        
+        <form class="form">
+            <div class="form-flex">
+                <div class="input">
+                    <label>Fuullname</label>
+                    <div class="div-input">
+                        <input class="form-input" type="text" placeholder="John DOe" dynamicInput />
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="uyarı"></div>
+                </div>
+                <div class="input">
+                    <label>Username</label>
+                    <div class="div-input">
+                        <input class="form-input" type="text" placeholder="doeJohn" dynamicInput />
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="uyarı"></div>
+                </div>
+            </div>          
+            <div class="input">
+                <label>Password</label>
+                <div class="div-input">
+                    <input class="form-input" type="password"  dynamicInput />
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="uyarı"></div>
+            </div>
+            <div class="input">
+                <label>RePasword</label>
+                <div class="div-input">
+                    <input class="form-input" type="password" dynamicInput />
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="uyarı"></div>
+            </div>
+            <div class="input">
+                <label>Email</label>
+                <div class="div-input">
+                    <input class="form-input" type="email"  dynamicInput />
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="uyarı"></div>
+            </div>
+
+             
+
+
+            <div class="form-button-div">
+                <a class="form-button" href="#">Kayıt Ol <i class="fa-regular fa-floppy-disk"></i></a>
+            </div>
+        </form>
+
+        <div class="img-form"> 
+            <img src="~/css/img/bg.png" alt="" />
+        </div>
+    </div>
+   
+</div>
+
+<script>
+    const inputs = document.querySelectorAll("[dynamicInput]");
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function () {
+            if (this.value.length > 0) {
+                this.classList.add("filled"); // Eğer input doluysa "filled" classını ekle
+            } else {
+                this.classList.remove("filled"); // Input boşsa classı kaldır
+            }
+        });
+    });
+</script>

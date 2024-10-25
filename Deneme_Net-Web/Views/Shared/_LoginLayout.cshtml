@@ -1,0 +1,56 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]-Husam</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/loginLayout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+
+
+
+    @* Font *@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Fredoka:wght@300..700&family=Protest+Strike&display=swap" rel="stylesheet">
+    @* ------------------------------------------- *@
+</head>
+<body class="login-body">
+
+    <header class="login-header">
+        <nav class="navbar">
+            <div class="logo">
+                    <span>
+                        HELLO
+                    </span>            
+            </div>
+            <a asp-controller="Home" asp-action="HomeIndex" class="geridon">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span>Back</span>
+                
+            </a>
+        </nav>
+    </header>
+    
+
+    <section class="main-login">
+        
+            @RenderBody()
+       
+      
+    </section>
+
+
+  
+
+
+   
+    @* Lazım olan scripler *@
+    <script src="https://kit.fontawesome.com/ac72e5463b.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+﻿
+.container2{
+    padding-inline:1rem;
+    
+}
+.container2 .title-form{
+    font-size:2.2rem;
+    position:relative;
+    width:max-content;
+    margin-block-end:20px;
+  
+}
+.title-form::after{
+    position:absolute;
+    content:"";
+    width:100%;
+    height:4px;
+    background:var(--altRenk-2);
+    bottom:-10px;
+    left:0;
+    border-radius:8px;
+}
+.form{
+    height:800px;
+    position:relative;  
+   
+}
+
+.container2 .form:before {
+    content: "Hello";
+    font-family: "Fredoka", serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(to right, #AB886D, #E4E0E1, #493628);
+    border-radius: 50%;
+    left: 42%;
+    z-index: -1;
+    animation: rotateBox 9s linear infinite;
+}
+
+@keyframes rotateBox {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 25px #40e0d0;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 0 0 25px #ff8c00;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0 0 25px #ff0080;
+    }
+}
+.input{
+    margin-block:10px;
+    width:100%;
+}
+.input input {
+    border: none;
+    outline: none;
+   background:none;
+}
+.input .form-input {
+    width: 100%;      
+    padding-block: 10px;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--altRenk)
+}
+.form-input.filled {
+    background-color: var(--altRenk);
+    backdrop-filter: blur(10px);
+    color: var(--altRenk-2);
+    border-radius:16px;
+    box-shadow:0 0 5px var(--altRenk-2);    
+}
+.form-input:focus {
+    border-radius: 16px;
+    box-shadow: 0 0 15px var(--altRenk);
+    backdrop-filter:blur(10px);
+}
+
+.div-input{
+    position:relative;
+    margin-top:5px;
+}
+.div-input i{
+    position:absolute;
+    font-size:1.1rem;
+    left:10px;
+    top:28%;
+}
+.input .uyarı{
+    margin-block-start:10px;
+    color:#ff0000;
+    font-size:13px;
+}
+
+/*button*/
+.form-button-div{
+    margin-block:40px;
+    text-align:center;
+   
+}
+.form-button-div .form-button{
+   background:var(--altRenk-2);
+   padding-block:10px;
+   padding-inline:25px;
+   color:var(--anaRenk);
+   letter-spacing:1px;
+   border:2px solid var(--altRenk);
+   border-radius:13px;
+   transition:all .4s ease;
+}
+.form-button:hover{
+   background-color:var(--altRenk);  
+   box-shadow:0 0 15px var(--altRenk-2);
+   color:var(--altRenk-2);
+   font-weight:500;
+}
+
+.img-form{
+    width:100%;
+    height:100%;
+    display:none;
+}
+.img-form img{
+    width:100%;
+    height:400px;
+}
+.form-flex{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+
+@media(min-width:468px) {
+    .container2{
+       padding-inline:2rem;
+   }
+}
+@media(min-width:768px) {
+   .container2{
+       padding-inline:6rem;
+   }
+   .form{
+       height:auto;
+   }
+}
+
+@media(min-width:968px) {
+    .container2 {
+        padding-inline:1rem;
+    }
+    .web-login{
+      display:flex;
+      width:100%;
+      height:max-content;
+      gap:50px;
+    }
+    .img-form{
+        display:block;
+    }
+    .web-login .form {
+        width: 100%;
+        padding-inline: 75px;
+        padding-block-start: 50px;
+    }
+}
+@media(min-width:1200px) {
+    .container2 {
+        padding-inline: 3rem;
+    }
+    .web-login .form {       
+        padding-inline: 120px;
+      
+    }
+    .img-form{
+        height:auto;
+    }
+   
+    
+}

@@ -1,0 +1,183 @@
+﻿
+/*header*/
+.headeer {
+    position: fixed !important;
+    background-color: var(--anaRenk-2);
+    padding-block: 5px;
+    width: 100%;
+    z-index: 9999;
+}
+
+.headeer.actives {
+    border-bottom: 1px solid var(--altRenk-2);
+    box-shadow: var(--shadow-header);
+}
+
+.headeer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*header-logo*/
+.logo span {
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 700;
+    font-size: var(--fontLogo);
+    letter-spacing: 6px;
+    color: var(--altRenk-2);
+    transition: color .5s;
+}
+
+.logo span:hover {
+    color: var(--anaRenk);
+}
+
+.navbar-mobile-top {
+    display: none;
+}
+
+.navbar-mobile-top .logo span {
+    letter-spacing: 4px;
+    font-size: var(--fontLogo-2);
+}
+
+/*navbar*/
+.navbarr {
+    display: flex;
+    justify-content: space-around;
+    gap: 70px;
+    color: var(--altRenk-2);
+    align-items: center;
+}
+
+/*navbarlist*/
+.navbarr .navbar-list {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+}
+
+.navbar-list-item {
+    color: var(--altRenk-2);
+    font-size: 18px;
+    font-weight: 500;
+    /*padding-inline: 15px;
+    padding-block: 8px;*/
+    border-radius: 10px;
+    transition: all .5s ease;
+    fill: var(--altRenk-2);
+    position:relative;
+
+}
+.navbar-list-item::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0) translateY(-100%);
+    background-color: var(--altRenk-2);
+    transition: 0.3s;
+}
+
+.navbar-list-item svg {
+    position: relative;
+    bottom: 2px;
+    height: 18px;
+    width: 18px;
+}
+
+.border-bt {
+    border-bottom: 1.5px solid var(--altRenk-2);
+}
+
+.navbar-list-item:hover::after {
+    transform: scaleX(0.9) translateY(0);
+}
+.navbar-list-item:hover {
+    
+    color: var(--anaRenk);
+    fill: var(--anaRenk);
+}
+
+.open-menu {
+    display: none;
+}
+
+.open-menu button, .close-menu button {
+    display: none;
+    background: transparent;
+    border: none;
+}
+
+.navbarr.actives {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(171, 136, 109,.5);
+    height: 100vh;
+    width: 350px;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    box-shadow: var(--shadow-header);
+    overflow-y: auto;
+}
+
+.navbarr.actives .navbar-mobile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-block-end: 10px;
+}
+
+.navbarr.actives .navbar-list {
+    flex-direction: column;
+}
+
+
+/*responsive-headwer*/
+@media(max-width:994px) {
+    .navbarr {
+    all: unset;
+    }
+
+    .navbarr .navbar-list {
+        display: none;
+    }
+
+    .navbarr .login {
+        display: none;
+    }
+
+    .navbarr.actives .navbar-list {
+        display: flex;
+        gap: 20px;
+    }
+
+    .navbarr.actives .login {
+        margin-block-start: 20px;
+        border-block-start: 1px dotted #ffff;
+        display: flex;
+        justify-content: end;
+    }
+
+    .open-menu, .open-menu button, .close-menu button {
+        display: flex;
+    }
+
+    .back-to-top {
+        bottom: 30px !important;
+        right: 30px !important;
+    }
+}
+
+@media(max-width:450px) {
+    .navbarr.actives{
+        width:100%;
+    }
+
+}

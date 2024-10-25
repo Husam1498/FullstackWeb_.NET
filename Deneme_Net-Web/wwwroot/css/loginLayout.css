@@ -1,0 +1,46 @@
+﻿.login-body{
+    background-color:#f0f0f0;
+}
+
+/*Header*/
+.login-header{
+    height:150px;
+    background-color:var(--altRenk-2);
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius:150px;
+    padding:10px;
+    margin-bottom:30px;
+}
+.login-header .navbar{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:50px;
+}
+
+
+    /*logo*/
+.login-header .navbar .logo span{
+    color:var(--anaRenk);
+
+}
+.login-header .navbar .logo span:hover{
+    color:var(--altRenk);
+}
+    /*geridon*/
+.navbar .geridon {
+    color: var(--anaRenk);
+    font-weight:800;
+    font-size:1.4rem;
+    padding-bottom:5px;
+    width:max-content;
+    text-decoration:none;
+    transition:color .3s ease-in;
+}
+.geridon i{
+    font-size:16px;
+}
+.navbar .geridon:hover{
+    color:var(--altRenk);
+    border-bottom:2px solid #fff;
+}

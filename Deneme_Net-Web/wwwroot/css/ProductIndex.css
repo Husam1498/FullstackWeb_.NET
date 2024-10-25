@@ -1,0 +1,247 @@
+﻿.product-top{
+    padding-block-start:30px;
+   
+
+}
+.container-search{
+    padding-inline:10px;
+}
+.search {
+    position: relative;
+}
+.search input {
+    height: 2rem;
+    outline: 0;
+    width: 100%;
+    background-color: var(--anaRenk);
+    padding: 0 1.6rem;
+    border-radius: .7rem;
+    appearance: none;
+    transition: all .3s cubic-bezier(0, 0, 0.43, 1.49);
+    transition-property: width,border-radius;
+    z-index: 1;
+    position: relative;
+}
+.search button{
+    display:block;
+    position:absolute;
+    top:0;
+    right:0;
+    width:70px;
+    height:2rem;
+    font-weight:500;
+    background-color:var(--altRenk);
+    border-radius: 0 .7rem .7rem 0;
+
+}
+.search input:not(:placeholder-shown) {
+    border-radius: .7rem 0 0 .7rem;
+    width: calc(100% - 70px);
+   
+}
+
+/*.search input:not(:placeholder-shown) .search button{
+    display:block;
+}*/
+.search label{
+    position:absolute;
+    clip:rect(1px,1px,1px,1px);
+    padding:0;
+    border:0;
+    height:1px;
+    width:1px;
+    overflow:hidden;
+}
+
+
+/*Filtreler*/
+.filtreler {
+    padding-block-start: 20px;
+    position: relative;
+    display:flex;
+    justify-content:space-around;
+}
+.svg-icon-2 {
+    fill: var(--altRenk);
+    width: 15px;
+   
+}
+.btn-filtre.actives,
+.btn-filtre-categori.actives {
+    background-color: var(--altRenk-2);
+    border-radius: 0px 0px 5px 5px;
+}
+.btn-filtre {
+    color: var(--altRenk);
+    padding-block:1px;
+    padding-inline:9px 2.5px;
+    border: 1px solid var(--altRenk);
+    border-radius:15px;
+  
+}
+.aralik{
+    visibility:hidden;
+    display:none;
+    max-width:370px;
+}
+.aralik.actives {
+    display:block;
+    visibility:visible;
+    width: 100%;
+    height: 115px;
+    position: absolute;
+    top: 51px;
+    left: 0;
+     background-color: rgba(171, 136, 109, .5);
+    backdrop-filter:blur(10px);
+    border-radius: 8px;
+    z-index: 99;
+}
+/*input label*/
+.input-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-block-end: 10px;
+}
+
+.input-label .enaz,
+.input-label .encok{
+    position:relative;
+}
+
+.input-label .input_input{
+    max-width:166px;
+    padding:5px;
+    height:30px;
+    padding-inline-start:70px;
+    border-radius:25px;
+}
+.input-label .input_input:hover{
+    box-shadow: 0px 0px 7px #fff;
+}
+
+
+.input-label .input_label{
+    position:absolute;
+    top:50%;
+    bottom:50%;
+    left:10px;
+    display:flex;
+    align-items:center;
+    font-size:14px;
+    font-weight:700;
+}
+
+.aralik-button {
+    margin-block:20px;
+    padding: 5px 20px;
+    background-color: var(--altRenk);
+    color: var(--anaRenk);
+    border-radius:8px;
+    transition:all .5s ease;
+}
+.aralik-button:hover{
+    letter-spacing:1px;
+    transform:translateY(-3px);
+    color: var(--anaRenk);
+}
+.aralik-catgori{
+    height:min-content!important;
+}
+.categorilist {
+    padding-block-start: 11px;
+    columns: 2;
+}
+.aralik-catgori .categorilist li {
+    display: flex;
+    gap: 2px;
+    margin-block-end:15px;
+}
+
+
+
+
+/*Ürünler*/
+.carousel .section-title{
+    margin-block:20px;
+}
+
+.carousel_container2{
+    white-space:nowrap;
+    padding-bottom:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    justify-items:center;
+}
+    .carousel_container2 .carousel-item__details {
+        opacity: 1;
+        background: linear-gradient( to top, rgba(75, 54, 28, 1) 0%, rgba(0, 0, 0, 0) 100% );
+    }
+.carousel_container2 .carousel-item .carousel-item__img {
+    width: 171px;
+    height: 215px;
+}
+
+
+.carousel_container2 .carousel-item {
+    width:171px;
+    height:215px;
+    margin-top:34px;
+}
+.carousel_container2 .content-card{
+    bottom:25px;
+}
+
+@media(min-width:568px) {
+    .aralik.actives {
+        top: 61px;
+        
+    }
+    .aralik-catgori {
+        left: 27%!important;
+    }
+}
+@media(min-width:768px){
+    .container-search {
+        padding-inline: 50px;
+    }
+    .carousel_container2{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+}
+
+
+@media(min-width:968px){
+    .aralik.actives {
+        
+        left:50px;
+    }
+
+    .aralik-catgori {
+        left: 56% !important;
+    }
+    .container-search {
+        padding-inline: 115px;
+    }
+}
+
+@media(min-width:1200px) {
+    .aralik.actives {
+        left: 125px;
+    }
+
+    .aralik-catgori {
+        left: 61% !important;
+    }
+    .container-search {
+        padding-inline: 150px;
+    }
+
+    .carousel_container2 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}

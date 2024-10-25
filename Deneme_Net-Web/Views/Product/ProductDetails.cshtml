@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="main-wrap">
+    <div class="product">
+        <div class="image-galery">
+            <img src="~/css/img/BG2.jpg" id="productId" alt="resim"  productImg/>
+            <div class="controls">
+                <span class="btnn active" det-btn></span>
+                <span class="btnn" det-btn></span>
+                <span class="btnn" det-btn></span>
+            </div>
+        </div>
+
+        <div class="product-details">
+            <div class="details">
+                <h2 class="d-title">Contrary to popular belief, Lorem Ipsum is </h2>
+                <h3 class="d-price">$150</h3>
+                <p class="d-details">
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+                </p>
+
+            </div>
+
+            <div class="sizes">
+                <form class="form">
+                    <div class="select-size">
+                        <h3>Sizes:</h3>
+                        <label for="sm">
+                            <input type="radio" name="size"  />
+                            <span>S</span>
+                        </label>
+                        <label for="m">
+                            <input type="radio" name="size" />
+                            <span>M</span>
+                        </label>
+                        <label for="l">
+                            <input type="radio" name="size"  />
+                            <span>L</span>
+                        </label>
+                        <label for="xl">
+                            <input type="radio" name="size"  />
+                            <span>XL</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="colors">
+                <form class="form">
+                    <div class="select-color">
+                        <h3>Colors:</h3>
+                        <label for="red">
+                            <input type="radio" name="color" />
+                            <span class="red"></span>
+                        </label>
+                         <label for="green">
+                            <input type="radio" name="color" />
+                            <span class="black"></span>
+                        </label>
+                        <label for="yellow">
+                            <input type="radio" name="color" />
+                            <span class="white"></span>
+                        </label>
+                      
+                    </div>
+                </form>
+            </div>
+
+            <div class="quantity">
+                <div class="select-quantity">
+                    <h3>Quantity:</h3>
+                    <input type="number" name="quantity" value="1" />
+                </div>
+            </div>
+
+            <div class="sub-btn">
+                <button class="d-btn">Buy Now</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const image = document.querySelector("[productImg]");
+    const btnn = document.querySelectorAll("[det-btn]");
+
+    btnn[0].addEventListener("click", function () {
+        image.src = "/css/img/BG2.jpg";
+
+        btnn.forEach(bt => bt.classList.remove("active"));
+
+        this.classList.add("active");
+    });
+    btnn[1].addEventListener("click", function () {
+        image.src = "/css/img/BG3.jpg";
+       
+        btnn.forEach(bt => bt.classList.remove("active"));
+
+        this.classList.add("active");
+    });
+    btnn[2].addEventListener("click", function () {
+        image.src = "/css/img/BG4.jpg";
+       
+        btnn.forEach(bt => bt.classList.remove("active"));
+
+        this.classList.add("active");
+    });
+</script>

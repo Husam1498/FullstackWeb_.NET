@@ -1,0 +1,224 @@
+﻿
+.main-wrap {
+    font-family: "Protest Strike", serif;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--anaRenk-2);
+}
+.main-wrap .product{
+    width:90%;
+    max-width:750px;
+    display:flex;
+
+
+}
+
+.main-wrap .product .image-galery{
+    flex-basis:43%;
+    background:#011627;
+    box-shadow:-10px 5px 10px 10px rgba(0,0,0,0.1);
+    transform: scale(1.07);
+    position:relative;
+     border-radius:8px;
+}
+.main-wrap .product .image-galery img{
+    border-radius:8px;
+   width:100%;
+       min-height: 517px;
+}
+
+
+.main-wrap .product .image-galery .controls{
+       position:absolute;
+       bottom:27px;
+       right:27px;
+
+}
+.main-wrap .product .image-galery .controls .btnn{
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.5);
+    display:block;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+.main-wrap .product .image-galery .controls .btnn.active{
+  background:var(--altRenk-2);
+
+}
+
+.main-wrap .product .product-details{
+    flex-basis:53%;
+    background:var(--altRenk);
+     box-shadow:-10px 5px 10px 10px rgba(0,0,0,0.1);
+     padding:40px 30px 40px 40px;
+     max-height:517px;
+
+}
+.main-wrap .product .product-details .d-title{
+    font-size:25px;
+    font-weight:600;
+    line-height:35px;
+    margin-bottom:15px;
+}
+.main-wrap .product .product-details .d-price{
+    font-size:20px;
+    font-weight:500;
+    line-height:25px;
+    margin-bottom:15px;
+}
+.main-wrap .product .product-details .d-details{
+  
+   font-family: "Fredoka", serif;
+    margin-bottom:15px;
+}
+.main-wrap .product .product-details .sizes{
+  
+    margin-block-end:20px;
+}
+.sizes .form .select-size{
+    display:flex;
+    align-items:center;
+}
+.select-size h3{
+    width:70px;
+    font-size:18px;
+    margin-right:30px;
+    font-weight:500;
+    margin-bottom:0;
+
+}
+.select-size label{
+    display:flex;
+    align-items:center;
+}
+.select-size label input {
+    display: none;
+}
+.select-size label span{
+    font-size:16px;
+    font-weight:500;
+    line-height:25px;
+    display:inline-block;
+    margin-right:10px;
+    cursor:pointer;
+    font-family: "Fredoka", serif;
+    transition:color .5s;
+}
+/*.select-size label input:checked .select-size label span {
+    font-weight: 600;
+    color:#fff;
+}*/
+
+.select-size label span:hover{
+    transform:scale(1.1);
+    color:#fff;
+}
+
+.main-wrap .product .product-details .colors {
+    margin-block-end: 20px;
+}
+.select-color {
+  display:flex;
+  align-items:center;
+
+}
+.select-color h3{
+    width:70px;
+    font-size:18px;
+    margin-right:30px;
+    margin-bottom:0;
+}
+.select-color label{
+    display:flex;
+    align-items:center;      
+}
+.select-color label input{
+   display:none;
+}
+
+.select-color label span {
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.select-color label input:checked + span{
+    
+   transform:scale(.7);
+   box-shadow:0 0 0 4px #fff, 0 0 0 4px #000;
+
+}
+
+.product-details .quantity{
+    margin-block-end:20px;
+
+}
+.quantity .select-quantity{
+    display:flex;
+    align-items:center;
+}
+.quantity .select-quantity h3 {
+    font-size: 18px;
+    width:80px;
+    margin-bottom: 0;
+}
+.quantity .select-quantity input {
+    width: 50px;
+    font-family: "Fredoka", serif;
+    border:1px solid var(--altRenk-2);
+    border-radius: 8px;
+    background: transparent;      
+    color: #fff;
+    text-align: center;
+}
+
+/*Button*/
+.product-details .sub-btn{
+
+}
+.sub-btn .d-btn {
+    width: 100%;
+    padding-block: 5px;
+    background-color: var(--anaRenk-2);
+    letter-spacing: 2px;
+    color: var(--altRenk-2);
+    border-radius:16px;
+    border:none;
+    transition:all .3s ease-in;
+}
+.d-btn:hover{
+    letter-spacing:3px;
+    transform:translateY(-2px);
+    box-shadow:0 0 15px 2px  var(--altRenk-2) ;
+}
+
+@media(max-width:568px){
+    .main-wrap{
+        height:auto;
+       
+    }
+    .main-wrap .product {
+        display: block;
+         margin-block:40px;
+        
+    }
+     .main-wrap .product .image-galery .controls{
+         bottom:4px;
+        left:38%;
+        right:auto;
+        display:flex;
+        gap:26px;
+     }
+    .main-wrap .product .image-galery .controls .btnn{
+        display:flex;
+        
+    }   
+}

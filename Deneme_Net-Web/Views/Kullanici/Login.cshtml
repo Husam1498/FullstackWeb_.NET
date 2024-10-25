@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LoginLayout";
+}
+
+
+<div class="container2">
+    <h1 class="title-form">Login</h1>
+
+    <div class="web-login">
+
+        <form class="form">
+               
+            <div class="input">
+                <label>Username</label>
+                <div class="div-input">
+                    <input class="form-input" type="text" placeholder="doeJohn" dynamicInput />
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div class="uyarı"></div>
+            </div>
+           
+            <div class="input">
+                <label>Password</label>
+                <div class="div-input">
+                    <input class="form-input" type="password"  dynamicInput />
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="uyarı"></div>
+            </div>
+
+            <div class="form-button-div">
+                <a class="form-button" href="#">Giriş Yap <i class="fa-solid fa-right-to-bracket"></i></a>
+            </div>
+
+            <div class="register" style="text-align:center">
+                <span> Hesabınız Yok mu? <a style="color:var(--altRenk-2); text-decoration:underline" asp-controller="Kullanici" asp-action="Register">Yeni Kayıt</a></span>
+            </div>
+
+        </form>
+
+        <div class="img-form">
+            <img src="~/css/img/bg.png" alt="" />
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const inputs = document.querySelectorAll("[dynamicInput]");
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function () {
+            if (this.value.length > 0) {
+                this.classList.add("filled"); // Eğer input doluysa "filled" classını ekle
+            } else {
+                this.classList.remove("filled"); // Input boşsa classı kaldır
+            }
+        });
+    });
+</script>
