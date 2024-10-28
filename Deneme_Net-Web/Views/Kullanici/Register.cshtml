@@ -4,62 +4,58 @@
 @{
     Layout = "_LoginLayout";
 }
-
+@model RegisterModel
 
 <div class="container2">
     <h1 class="title-form">Kayıt Ol</h1>
     
     <div class="web-login">
         
-        <form class="form">
+        <form class="form" asp-controller="Kullanici" asp-action="Register">
             <div class="form-flex">
                 <div class="input">
-                    <label>Fuullname</label>
+                    <label>Fullname</label>
                     <div class="div-input">
-                        <input class="form-input" type="text" placeholder="John DOe" dynamicInput />
+                        <input class="form-input" type="text" placeholder="John DOe" asp-for="Fullname" dynamicInput />
                         <i class="fa-solid fa-user"></i>
                     </div>
-                    <div class="uyarı"></div>
+                    <span asp-validation-for="Fullname" class="uyarı"></span>
                 </div>
                 <div class="input">
                     <label>Username</label>
                     <div class="div-input">
-                        <input class="form-input" type="text" placeholder="doeJohn" dynamicInput />
+                        <input asp-for="Username" class="form-input" type="text" placeholder="doeJohn" dynamicInput />
                         <i class="fa-solid fa-user-shield"></i>
                     </div>
-                    <div class="uyarı"></div>
+                    <span asp-validation-for="Username" class="uyarı"></span>
                 </div>
             </div>          
             <div class="input">
                 <label>Password</label>
                 <div class="div-input">
-                    <input class="form-input" type="password"  dynamicInput />
+                    <input asp-for="Password" class="form-input" type="password"  dynamicInput />
                     <i class="fa-solid fa-lock"></i>
                 </div>
-                <div class="uyarı"></div>
+                <span asp-validation-for="Password" class="uyarı"></span>
             </div>
             <div class="input">
                 <label>RePasword</label>
                 <div class="div-input">
-                    <input class="form-input" type="password" dynamicInput />
+                    <input asp-for="RePassword" class="form-input" type="password" dynamicInput />
                     <i class="fa-solid fa-lock"></i>
                 </div>
-                <div class="uyarı"></div>
+                <span asp-validation-for="RePassword" class="uyarı"></span>
             </div>
             <div class="input">
                 <label>Email</label>
                 <div class="div-input">
-                    <input class="form-input" type="email"  dynamicInput />
+                    <input asp-for="Email" class="form-input" type="email"  dynamicInput />
                     <i class="fa-solid fa-envelope"></i>
                 </div>
-                <div class="uyarı"></div>
+                <span asp-validation-for="Email" class="uyarı"></span>
             </div>
-
-             
-
-
             <div class="form-button-div">
-                <a class="form-button" href="#">Kayıt Ol <i class="fa-regular fa-floppy-disk"></i></a>
+                <button type="submit" class="form-button" >Kayıt Ol <i class="fa-regular fa-floppy-disk"></i></button>
             </div>
         </form>
 
@@ -70,16 +66,38 @@
    
 </div>
 
-<script>
-    const inputs = document.querySelectorAll("[dynamicInput]");
 
-    inputs.forEach(input => {
-        input.addEventListener("input", function () {
-            if (this.value.length > 0) {
-                this.classList.add("filled"); // Eğer input doluysa "filled" classını ekle
-            } else {
-                this.classList.remove("filled"); // Input boşsa classı kaldır
-            }
+@section Scripts {
+      
+    @if (ViewData["Kayit"] !=null && ViewData["Kayit"] == "Kayitvar")
+    {
+        <script>
+            createToastError("Kayit Var!", "Lütfen Başka bir kullanıcı Adi giriniz");
+        </script>
+    }
+    else
+    {
+        <script>
+            createToastInfo("Bilgi", "Tüm alanları doğru giriniz lütfen");
+        </script>
+    }
+
+
+
+    <script>                  
+        const inputs = document.querySelectorAll("[dynamicInput]");
+
+        inputs.forEach(input => {
+            input.addEventListener("input", function () {
+                if (this.value.length > 0) {
+                    this.classList.add("filled"); // Eğer input doluysa "filled" classını ekle
+                } else {
+                    this.classList.remove("filled"); // Input boşsa classı kaldır
+                }
+            });
         });
-    });
-</script>
+    </script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}

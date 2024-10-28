@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/loginLayout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/toast.css" asp-append-version="true" />
 
 
 
@@ -19,7 +20,7 @@
     @* ------------------------------------------- *@
 </head>
 <body class="login-body">
-
+    <div class="notifacations"></div>
     <header class="login-header">
         <nav class="navbar">
             <div class="logo">
@@ -50,6 +51,8 @@
    
     @* Lazım olan scripler *@
     <script src="https://kit.fontawesome.com/ac72e5463b.js" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/toastScript.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

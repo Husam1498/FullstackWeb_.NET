@@ -1,27 +1,20 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
     Layout = "_LoginLayout";
 }
-
+@model LoginModel
 
 <div class="container2">
     <h1 class="title-form">Login</h1>
 
     <div class="web-login">
 
-        <form class="form">
+        <form class="form" asp-controller="Kullanici" asp-action="Login">
                
             <div class="input">
                 <label>Username</label>
                 <div class="div-input">
-                    <input class="form-input" type="text" placeholder="doeJohn" dynamicInput />
+                    <input asp-for="Username" class="form-input" type="text" placeholder="doeJohn" dynamicInput />
                     <i class="fa-solid fa-user-shield"></i>
                 </div>
                 <div class="uyarı"></div>
@@ -30,14 +23,14 @@
             <div class="input">
                 <label>Password</label>
                 <div class="div-input">
-                    <input class="form-input" type="password"  dynamicInput />
+                    <input asp-for="Password" class="form-input" type="password"  dynamicInput />
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <div class="uyarı"></div>
             </div>
 
             <div class="form-button-div">
-                <a class="form-button" href="#">Giriş Yap <i class="fa-solid fa-right-to-bracket"></i></a>
+                <button class="form-button" type="submit">Giriş Yap <i class="fa-solid fa-right-to-bracket"></i></button>
             </div>
 
             <div class="register" style="text-align:center">
@@ -53,7 +46,18 @@
 
 </div>
 
+@section Scripts {
+
+    @if (TempData["Kayit"] != null)
+    {
+       <script>
+            createToastSuccess("Başarılı", "Kaydınız Olşuturuldu login yapabilirsiniz");
+
+       </script>
+    }
+
 <script>
+   
     const inputs = document.querySelectorAll("[dynamicInput]");
 
     inputs.forEach(input => {
@@ -66,3 +70,6 @@
         });
     });
 </script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
