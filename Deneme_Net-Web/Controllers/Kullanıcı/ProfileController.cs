@@ -62,7 +62,7 @@ namespace Deneme_Net_Web.Controllers.Kullanıcı
 
 
                 ViewData["Profileİmage"] = user.ProfilImageFileName;
-                TempData["ToastHata"] = "Basarili";
+                TempData["Toast"] = "Basarili";
                
 
                 return RedirectToAction(nameof(ProfileIndex));

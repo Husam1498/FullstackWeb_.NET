@@ -89,7 +89,7 @@
                         else
                         {
                             <a asp-controller="Profile" asp-action="ProfileIndex" class="navbar-list-item">
-                                <img style="border-radius: 50%; width: 30px; height: 30px;" src="~/uploads/@ViewData["Profileİmage"]" alt="Alternate Text" />
+                                <img style="border-radius: 50%; width: 30px; height: 30px;" src="~/uploads/@User.FindFirst("ProfilImage").Value" alt="Alternate Text" />
                                 <span>@User.FindFirst("Username").Value</span>
                             </a>
                         }
