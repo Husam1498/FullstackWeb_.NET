@@ -39,7 +39,7 @@ namespace Deneme_Net_Web.Controllers.Kullanıcı
                         claims.Add(new Claim(ClaimTypes.Name, user.Fullname ?? string.Empty));//String boş ise belirtmen lazım claimler boş değer alamaz
                         claims.Add(new Claim(ClaimTypes.Role, user.Role));
                         claims.Add(new Claim("Username", user.Username)) ;//String boş ise belirtmen lazım claimler boş değer alamaz
-
+                        claims.Add(new Claim("ProfilImage", user.ProfilImageFileName));
                         //claims ve hangi authenticationu(AuthanticationType) kullanacağını söylemelisin, ve bize buna uygun bir clası oluşturacak
                         ClaimsIdentity identity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
 

@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_AdminLayout";
+}
+
+
+<div style="padding-inline:1rem;">
+    <div class="baslik-center">
+        <h1 class="title"> Hoşgeldiniz #@User.FindFirst("Username").Value </h1>
+    </div>
+    <div class="bodyAdmin">
+        <div class="body-left">
+            <div class="body-left-title">
+                <h3>İmage Uploads </h3>
+            </div>
+            <form asp-controller="Admin" asp-action="ProfileChangeImage" method="post" enctype="multipart/form-data">
+                <div class="imageUpload">
+                    <div class="containerFile div-shadow">
+                        <div class="folder">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                        </div>
+                        <label class="custom-file-upload">
+                            <input class="title" name="file" type="file"  accept=".jpg, .png, .jpeg"/>
+                            Choose a file
+                        </label>
+                        <span style="color:#fff; font-size:9px;margin-top: 5px;"><ion-icon name="alert-circle-outline"></ion-icon> only .jpg, .png, .jpeg </span>
+                    </div>
+                    <div class="varsayılanFoto div-shadow">
+                        <h5>Varsayılan Fotografınız</h5>
+                        <img src="~/uploads/@User.FindFirst("ProfilImage").Value" />
+                    </div>
+                    <button class="div-shadow" type="submit">Kaydet</button>
+                </div>
+            
+            </form>
+            
+            
+
+        </div>
+
+        <div class="body-right">
+            fdsf
+        </div>
+        .
+    </div>
+
+</div>
+
+<script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

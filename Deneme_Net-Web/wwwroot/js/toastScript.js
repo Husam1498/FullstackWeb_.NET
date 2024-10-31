@@ -3,7 +3,7 @@
 function createToast(type, icon, title, text) {
     let newToast = document.createElement("div");
     newToast.innerHTML = `
-   <div class="toast ${type}">
+   <div class="toasts ${type}">
         <i class="${icon}"></i>
         <div class="content">
           <div class="title">${title}</div>
@@ -19,7 +19,7 @@ function createToast(type, icon, title, text) {
 function createToastSuccess( title, text) {
     let newToast = document.createElement("div");
     newToast.innerHTML = `
-   <div class="toast success">
+   <div class="toasts success">
         <i class="fa-solid fa-circle-check"></i>
         <div class="content">
           <div class="title">${title}</div>
@@ -36,7 +36,7 @@ function createToastSuccess( title, text) {
 function createToastError(title, text) {
     let newToast = document.createElement("div");
     newToast.innerHTML = `
-   <div class="toast error">
+   <div class="toasts error">
         <i class="fa-solid fa-circle-exclamation"></i>
         <div class="content">
           <div class="title">${title}</div>
@@ -52,7 +52,7 @@ function createToastError(title, text) {
 function createToastWarning(title, text) {
     let newToast = document.createElement("div");
     newToast.innerHTML = `
-   <div class="toast warning">
+   <div class="toasts warning">
         <i class="fa-solid fa-triangle-exclamation"></i>
         <div class="content">
           <div class="title">${title}</div>
@@ -68,7 +68,7 @@ function createToastWarning(title, text) {
 function createToastInfo(title, text) {
     let newToast = document.createElement("div");
     newToast.innerHTML = `
-   <div class="toast info">
+   <div class="toasts info">
         <i class="fa-solid fa-circle-info"></i>
         <div class="content">
           <div class="title">${title}</div>

@@ -1,0 +1,250 @@
+﻿/*==============Card box shadow=========*/
+.div-shadow{
+    box-shadow:0 0 15px 3px var(--anaRenk-2);
+}
+
+
+.baslik-center {
+    width: 100%;
+    text-align: center;
+    margin-block: 10px 60px;
+    border: 3px solid var(--anaRenk-2);
+    border-radius: 16px;
+    padding-block: 4px;
+}
+.bodyAdmin{
+    width:100%;
+    height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+}
+
+    /*bodyLEFT*/
+.body-left{
+    padding-inline:10px;
+}
+.body-left-title{
+    text-align:start;
+    padding-inline-start:20px;
+    display:flex;
+    justify-content:center;
+}
+.body-left-title h3{
+    display:block;
+    letter-spacing:1px;
+    font-size: 1.5rem;
+     border-bottom: 3px solid var(--anaRenk-2);
+    padding-bottom: 3px;
+}
+.body-left .file{
+    background-color:blueviolet
+}
+/*containerFile*/
+
+.imageUpload{
+    width:100%;
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    justify-items:center;
+    align-items:center;
+    gap:12px;
+}
+.btn-form5 {
+    width: 80%;
+    background: linear-gradient(135deg, var(--altRenk), var(--altRenk-2));
+    padding-block: 10px;
+    border:4px solid var(--anaRenk-2);
+    border-radius:1rem;
+    color:var(--white);
+    font-size:1rem;
+    transition:all .5s;
+}
+.btn-form5:hover{
+    letter-spacing:2px;
+    transform:translateY(4px);
+}
+
+.varsayılanFoto {
+    background: linear-gradient(135deg, var(--altRenk), var(--altRenk-2));
+    width: 100%;
+    height: 100%;
+    border-radius:1rem;
+    padding:5px;
+    color:var(--white);
+    display:flex;
+    flex-direction:column-reverse;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+
+}
+.varsayılanFoto h5 {
+   letter-spacing:1px;
+   font-size:1rem;
+}
+.varsayılanFoto img {
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+}
+
+.containerFile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--altRenk), var(--altRenk-2));
+    border-radius: 15px;
+    
+    width: 100%;height: 100%;
+    min-width: 167.8px;
+}
+
+.folder {
+    position: relative;
+    animation: float 2.5s infinite ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.folder:hover {
+    transform: scale(1.05);
+}
+
+.folder .top {
+    background: linear-gradient(135deg, var(--altRenk), var(--altRenk));
+    width: 48px;
+    height: 16px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.folder .bottom {
+    background: var(--anaRenk-2);
+    width: 80px;
+    height: 52px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 0 10px 10px 10px;
+    position: relative;
+    top: -10px;
+}
+
+.custom-file-upload {
+    font-size: 1.1em;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.custom-file-upload:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+/*BODy RİGHT*/
+.body-right {
+    padding-inline:5px;
+    position:relative;
+}
+/*.body-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bgFOrm.png);
+    object-fit: cover;
+    z-index:-1;
+}*/
+.form-group {
+    padding-inline: 20px;
+    margin-top: 15px;
+}
+.changeFullname{
+    margin-bottom:25px;
+}
+.form-flex-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.form-flex-btn .btn-form5{
+    width:30%;
+    border-radius:50%;
+}
+.changeUserName{
+    margin-bottom:25px;
+}
+
+.form-flex-btn .input .div-input .form-input {
+    color: var(--altRenk);
+}
+
+
+/* RRESPONİSVE */
+
+@media(max-width:930px){
+
+    .bodyAdmin {
+        grid-template-columns: 1fr;
+        gap: 100px;
+        height: min-content;
+    }
+
+    .body-right{
+        margin-bottom:100px;
+        padding-inline:50px;
+    }
+}
+
+
+@media(max-width:600px) {
+    .body-right {
+        margin-bottom: 100px;
+        padding-inline: 0px;
+    }
+}
+@media(max-width:498px) {
+    .form-flex-btn{
+        display:block;
+       
+    }
+    .form-flex-btn .btn-form5{
+        border-radius:8px;
+    }
+
+
+}

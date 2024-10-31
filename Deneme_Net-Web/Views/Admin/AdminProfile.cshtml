@@ -1,0 +1,170 @@
+﻿@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "SProfile";
+}
+@model RegisterModel
+
+<div style="padding-inline:1rem;">
+
+    <div class="baslik-center">
+        <h1 class="title"> Hoşgeldiniz #@User.FindFirst("Username").Value </h1>
+    </div>
+
+    <div class="bodyAdmin">
+
+        <div class="body-left">
+            <div class="body-left-title">
+                <h3>İmage Uploads  </h3>
+            </div>
+            <form asp-controller="Admin" asp-action="ProfileChangeImage" method="post" enctype="multipart/form-data">
+                <div class="imageUpload">
+                    <div class="containerFile div-shadow">
+                        <div class="folder">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                        </div>
+                        <label class="custom-file-upload">
+                            <input class="title" name="file" type="file" accept=".jpg, .png, .jpeg" />
+                            Choose a file
+                        </label>
+                        <span style="color:#fff; font-size:9px;margin-top: 5px;"><ion-icon name="alert-circle-outline"></ion-icon> only .jpg, .png, .jpeg </span>
+                    </div>
+                    <div class="varsayılanFoto div-shadow">
+                        <h5>Profil Fotografınız</h5>
+                        <img src="~/uploads/@ViewData["Profileİmage"]" />
+                    </div>
+                    <button class="btn-form5 div-shadow" type="submit">Kaydet</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="body-right">
+            <div class="body-left-title">
+                <h3>Kullanıcı Ayarları </h3>
+            </div>
+            <div class="form-group">
+                <div class="changeFullname">
+                    <form class="form-flex-btn" asp-controller="Admin" asp-action="ProfileFullName" method="post">
+                        <div class="input">
+                            <label>Fullname</label>
+                            <div class="div-input">
+                                <input name="Fullname" class="form-input" type="text" asp-for="Fullname" dynamicInput value="@ViewData["Fullname"]" />
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <span asp-validation-for="Fullname" class="uyarı"></span>
+                        </div>
+                        <button class="btn-form5"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
+                    </form>
+                </div>
+
+                <div class="changeUserName" >
+                    <form class="form-flex-btn" asp-controller="Admin" asp-action="ProfileChangeUsername" method="post">
+                        <div class="input">
+                            <label>Username</label>
+                            <div class="div-input">
+                                <input name="Username" class="form-input" type="text" asp-for="Username" dynamicInput value="@ViewData["Username"]" />
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <span asp-validation-for="Username" class="uyarı"></span>
+                        </div>
+                        <button class="btn-form5"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
+                    </form>
+                </div>
+
+                <div class="changePassword">
+                    <p>Yeni şifrenizi Giriniz</p>
+                    <form class="form-flex-btn" asp-controller="Admin" asp-action="ProfileChangePassword" method="post">
+                        <div class="form-flex">
+                            <div class="input">
+                                <label>Password</label>
+                                <div class="div-input">
+                                    <input name="Pass" class="form-input" type="password" asp-for="Password" dynamicInput />
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                               
+                                <span asp-validation-for="Password" class="uyarı"></span>
+                            </div>
+                            <div class="input">
+                                <label>RePassword</label>
+                                <div class="div-input">
+                                    <input name="RPass" class="form-input" type="password" asp-for="RePassword" dynamicInput />
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <span asp-validation-for="RePassword" class="uyarı"></span>
+                            </div>
+                        </div>
+                       
+                        <button class="btn-form5"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+        
+    </div>
+
+</div>
+
+
+@section Scripts {
+
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    @* Başarılı MEsajlar *@
+    @if (TempData["Toast"] != null)
+    {
+        @if ((TempData["Toast"]?.ToString() ?? "").Equals("Resim", StringComparison.OrdinalIgnoreCase))
+        {
+            <script>
+                createToastSuccess("Başarılı", "Resminiz Güncellendi ");
+                @* createToastInfo("İnfo", "Değişikleri Görmek için Tekrar Giriş Yapınız") *@
+            </script>
+        }
+        @if ((TempData["Toast"]?.ToString() ?? "").Equals("Fullname", StringComparison.OrdinalIgnoreCase))
+        {
+            <script>
+                createToastSuccess("Başarılı", "İsminiz Güncellendi ");
+              
+            </script>
+        } 
+        @if ((TempData["Toast"]?.ToString() ?? "").Equals("userName", StringComparison.OrdinalIgnoreCase))
+        {
+            <script>
+                createToastSuccess("Başarılı", "Kullanıcı Adı Güncellendi ");
+              
+            </script>
+        }
+        @if ((TempData["Toast"]?.ToString() ?? "").Equals("pass", StringComparison.OrdinalIgnoreCase))
+        {
+            <script>
+                createToastSuccess("Başarılı", "Şifreniz Değiştirildi ");
+              
+            </script>
+        }
+      
+    }
+
+
+    @* Başarısız Mesajlar *@
+    @if (TempData["ToastHata"] != null)
+    {
+        @if ((TempData["ToastHata"]?.ToString() ?? "").Equals("Vuser", StringComparison.OrdinalIgnoreCase))
+        {
+            <script>
+                createToastError("Başarısız", "Lütfen başka bir kullanıcı ismi giriniz! ");
+
+            </script>
+        }
+        @if ((TempData["ToastHata"]?.ToString() ?? "").Equals("Apass", StringComparison.OrdinalIgnoreCase))
+        {
+            <script>
+                createToastWarning("Başarısız", "Şifreleriniz eşleşmiyor! ");
+
+            </script>
+        }
+    }
+
+}

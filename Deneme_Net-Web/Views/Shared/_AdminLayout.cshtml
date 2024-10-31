@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]-Husam</title>
+    <link rel="stylesheet" href="~/css/AdminCss/styleAdmin.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/toast.css"  />
+    <link rel="stylesheet" href="~/css/register.css"  />
+    <link rel="stylesheet" href="~/css/AdminCss/Main.css" />
+    <link rel="stylesheet" href="~/css/AdminCss/cards.css" />
+    <link rel="stylesheet" href="~/css/AdminCss/orderDetails.css" />
+    <link rel="stylesheet" href="~/css/AdminCss/memberAdminProfile.css" />
+    <link rel="stylesheet" href="~/css/AdminCss/Responsive.css" />
+    
+</head>
+<body>
+    <div class="notifacations">
+    
+    </div>
+
+
+    <div class="adminContainer">
+        <div class="navigation">
+            <ul class="links">
+                <li class="link">
+                    <a href="#">
+                        <span class="icon">
+                            <img src="~/css/img/h-loog-Photoroom.png" />
+                        </span>
+                        <span class="title">Hello</span>
+                    </a>
+                </li>
+
+                <li class="link hovered" adminProfileSil>
+                    <a asp-controller="Admin" asp-action="AdminIndex">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Ana Sayfa</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here" />
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <div class="user">
+                <a asp-controller="Admin" asp-action="AdminProfile" adminProfile>
+                    <img src="~/uploads/@ViewData["Profileİmage"] "  />
+                </a>
+
+               
+            </div>
+        </div>
+        
+        <div id="panel">
+            @RenderBody()
+        </div>
+       
+
+    </div>
+ 
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+    @* Lazım olan scripler *@
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://kit.fontawesome.com/ac72e5463b.js" crossorigin="anonymous"></script>
+    <script src="~/js/toastScript.js"></script>
+
+    <script src="~/js/AdminJS/scriptAdmin.js" ></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
