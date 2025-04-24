@@ -1,0 +1,94 @@
+﻿
+.divBackground{
+    background-color:var(--anaRenk);
+    padding:4px;
+    border-radius:2px;
+}
+
+.container3 {
+    padding-inline: 4rem;
+}
+.container4{
+    padding-inline:4.5rem;
+}
+
+
+.baslik-center .titleP{
+    margin-top:10px;
+}
+.linkler {
+    background: var(--anaRenk-2);
+    display:flex;
+    justify-content: space-around;
+    margin-bottom:15px;
+}
+.link-btn {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding-inline: 10px;
+    transition: all .3s;
+}
+.link-btn:hover {
+    background-color: var(--anaRenk);
+} 
+.linkler .link-btn a{
+   font-size:1.2rem;
+   font-weight:500;
+   letter-spacing:1px;
+   color: var(--altRenk);
+}
+
+/*CheckBox*/
+.checkCont {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    margin-bottom: 15px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.checkBoxTitle h4 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.checkBoxTitle h4::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    height: 2px;
+    border-radius:2px;
+    width: 100%;
+    background-color: var(--altRenk-2);
+    transition: 0.3s;
+}
+@media(max-width:768px) {
+    .container3 {
+        padding-inline: 2rem;
+    }
+    .container4{
+        padding-inline:2.5rem;
+    }
+}
+@media(max-width:468px){
+    .baslik-center {
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+    .container3 {
+        padding-inline: .4rem;
+    }
+    .container4 {
+        padding-inline: .7rem;
+    }
+
+}

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IKullaniciService: IKullaniciRepository
+    public interface IProductService:IProductRepository
     {
     }
 }

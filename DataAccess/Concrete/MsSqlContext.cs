@@ -11,6 +11,12 @@ namespace DataAccess.Concrete
     {
 
         public DbSet<Kullanicilar> Kullanicilar { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Colors> Colors { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Sizes> Sizes { get; set; }
+        public DbSet<Photo> Photos { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -23,7 +29,49 @@ namespace DataAccess.Concrete
             modelBuilder.Entity<Kullanicilar>()
                 .HasKey(u => u.K_id);
 
+            modelBuilder.Entity<Product>()
+                 .Property(p => p.Price)
+                 .HasColumnType("decimal(18,2)"); // Fiyat için hassasiyet ve ölçek tanımlandı
+
+            modelBuilder.Entity<ProductCategory>()
+                .HasKey(pc => new { pc.ProductId, pc.CategoryId });
+
+            modelBuilder.Entity<ProductCategory>()
+                .HasOne(e => e.Product)  // ProductCategory, bir Product'a ait.
+                .WithMany(p => p.ProductCategories)// Bir Product, birçok ProductCategory'ye sahip olabilir.
+                .HasForeignKey(e => e.ProductId); // İlişki, ProductCategory tablosundaki ProductId ile bağlanır
            
+            modelBuilder.Entity<ProductCategory>()
+                .HasOne(e => e.Category) 
+                .WithMany(p => p.ProductCategories)
+                .HasForeignKey(e => e.CategoryId); // İlişki, ProductCategory tablosundaki CategoryId ile bağlanır
+
+            modelBuilder.Entity<ProductSize>()
+                .HasKey(ps => new { ps.ProductId, ps.SizeId });
+
+            modelBuilder.Entity<ProductSize>()
+                .HasOne(ps => ps.Product)
+                .WithMany(p => p.ProductSizes)
+                .HasForeignKey(ps => ps.ProductId);
+
+            modelBuilder.Entity<ProductSize>()
+                .HasOne(ps => ps.Size)
+                .WithMany(s => s.ProductSizes)
+                .HasForeignKey(ps => ps.SizeId);
+
+            modelBuilder.Entity<ProductColor>()
+                 .HasKey(pc => new { pc.ProductId, pc.ColorId });
+
+            modelBuilder.Entity<ProductColor>()
+                .HasOne(pc => pc.Product)
+                .WithMany(p => p.ProductColors)
+                .HasForeignKey(pc => pc.ProductId);
+
+            modelBuilder.Entity<ProductColor>()
+                .HasOne(pc => pc.Color)
+                .WithMany(c => c.ProductColors)
+                .HasForeignKey(pc => pc.ColorId);
+
         }
     }
 }

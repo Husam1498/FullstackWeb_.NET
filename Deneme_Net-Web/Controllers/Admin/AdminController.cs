@@ -22,6 +22,11 @@ namespace Deneme_Net_Web.Controllers.Admin
             ProfileinfoLoader();
             return View();
         }
+        public IActionResult AdminIndexPartial()
+        {
+            ProfileinfoLoader();
+            return PartialView("_MemberAdminProfilePartial");
+        }
         public IActionResult AdminProfile()
         {
             ProfileinfoLoader();

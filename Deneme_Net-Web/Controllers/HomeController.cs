@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace Deneme_Net_Web.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         //private readonly ILogger<HomeController> _logger;
@@ -26,7 +26,7 @@ namespace Deneme_Net_Web.Controllers
 
         public IActionResult HomeIndex()
         {
-            ProfileinfoLoader();
+           
             return View();
         }
 
@@ -36,15 +36,17 @@ namespace Deneme_Net_Web.Controllers
             return View();
         }
 
-        private void ProfileinfoLoader()
-        {
-            int userid = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            Kullanicilar user = servisK.GetById(userid);
-            ViewData["Fullname"] = user.Fullname;
-            ViewData["Username"] = user.Username;
-            ViewData["Profile›mage"] = user.ProfilImageFileName;
-            ViewData["Email"] = user.Email;
+        //[Authorize]
 
-        }
+        //private void ProfileinfoLoader()
+        //{
+        //    int userid = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        //    Kullanicilar user = servisK.GetById(userid);
+        //    ViewData["Fullname"] = user.Fullname;
+        //    ViewData["Username"] = user.Username;
+        //    ViewData["Profile›mage"] = user.ProfilImageFileName;
+        //    ViewData["Email"] = user.Email;
+
+        //}
     }
 }

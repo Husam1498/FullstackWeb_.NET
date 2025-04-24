@@ -12,8 +12,18 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddScoped<IKullaniciRepository, CoreKullanicilarRepo>();
+builder.Services.AddScoped<IProductRepository, CoreProductRepo>();
+builder.Services.AddScoped<ICategoryRepository, CoreCategoryRepo>();
+builder.Services.AddScoped<ISizesRepository, CoreSizeRepo>();
+builder.Services.AddScoped<IPhotoRepository, CorePhotoRepo>();
+builder.Services.AddScoped<IColorsRepository, CoreColorsRepo>();
 
 builder.Services.AddScoped<IKullaniciService, KullaniciManager>();
+builder.Services.AddScoped<IProductService, ProductManager>();
+builder.Services.AddScoped<ICategoryService,CategoryManager>();
+builder.Services.AddScoped<ISizesService, SizesManager>();
+builder.Services.AddScoped<IPhotoService, PhotoManager>();
+builder.Services.AddScoped<IColorService, ColorManager>();
 
 
 /*Cookie Authentication*/
