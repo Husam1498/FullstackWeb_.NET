@@ -51,8 +51,20 @@ namespace Deneme_Net_Web.Controllers
             return PartialView("_addProductWithDetailPartial");
         }
         [HttpPost]
-        public IActionResult AddProductWithDetail(Product product, List<int> categoryIds, List<int> colorIds, List<int> sizeIds, List<string> photoUrls) { 
-        
+        public IActionResult AddProductWithDetail(Product product, List<int> categoryIds, List<int> colorIds, List<int> sizeIds, List<string> photoUrls) {
+            /*
+             Product bir model oluşturiçerisinde id name,price gibi özelikler olsun sadece category colors ve sizes olmasın
+             
+             */
+            if (ModelState.IsValid) { 
+            
+                Product product1 = new Product();
+                
+            
+            }
+
+
+
             return PartialView("_addProductWithDetailPartial");
         }
 

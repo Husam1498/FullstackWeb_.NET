@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Entities;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
@@ -150,7 +152,11 @@ namespace Deneme_Net_Web.Controllers.Admin
             return View();
         }
 
-
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("HomeIndex", "Home");
+        }
 
     }
 }

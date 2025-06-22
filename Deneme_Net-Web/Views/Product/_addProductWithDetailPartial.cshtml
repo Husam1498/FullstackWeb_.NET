@@ -6,7 +6,7 @@
 </div>
 <div class="divBackground">
 
-    <form action="/" method="post">
+    <form asp-controller="Product" asp-action="AddProductWithDetail" method="post">
         <div class="form-flex">
             <div class="input"> 
                 <label> ProductName</label>
@@ -35,7 +35,7 @@
             <span asp-validation-for="Price" class="uyarı"></span>
         </div>
 
-        <div class="checkCont">
+        <div class="checkCont" >
             <div class="checkCont2">
                 <div class="checkBoxTitle">
                     <h4>Categoriler</h4>
@@ -68,7 +68,7 @@
 
             <div class="checkCont2">
                 <div class="checkBoxTitle">
-                    <h4>Renkler</h4>
+                    <h4>Bedenler</h4>
                 </div>
                 @foreach (var size in ViewBag.Sizes as List<Sizes>)
                 {
