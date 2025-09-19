@@ -9,5 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface IProductRepository:IRepository<Product>
     {
+        IEnumerable<Product> GetWithIncludes();
     }
 }

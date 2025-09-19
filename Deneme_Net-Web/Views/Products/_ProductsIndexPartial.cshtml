@@ -1,0 +1,29 @@
+﻿<h1>Products Index PArtial</h1>
+<div class="baslik-center">
+    <h1 class="title">UrunLer Sayfasına HoşGelnidinz</h1>
+    <p class="titleP"> Aşağıdaki Seçenkelrden Ürünlerinizi</p>
+    <p> Ekleyebilir Silebilir ve Düzenleyebiilirsiniz </p>
+</div>
+
+
+<div class="conteiner3">
+
+    <div class="linkler">
+        <div class="link-btn">
+            <a id="urunEkle" asp-action="AddProducts" data-ajax="true" data-ajax-method="Get" data-ajax-update="#panelProducts">Urun ekle</a>
+        </div>
+
+    </div>
+
+    <div class="container4">
+        <div id="panelProducts">
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+
+}

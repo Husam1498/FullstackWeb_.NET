@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
     <link href="~/css/site.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/toast.css"  />
     <link rel="stylesheet" href="~/css/register.css"  />
+    <link rel="stylesheet" href="~/css/homeIndex.css" />
     <link rel="stylesheet" href="~/css/AdminCss/Main.css" />
     <link rel="stylesheet" href="~/css/AdminCss/cards.css" />
     <link rel="stylesheet" href="~/css/AdminCss/orderDetails.css" />
@@ -16,15 +18,18 @@
     <link rel="stylesheet" href="~/css/AdminCss/Responsive.css" />
     
 </head>
+
 <body>
     <div class="notifacations">
-    
+    @* Bildirim  *@
     </div>
 
-
     <div class="adminContainer">
+
         <div class="navigation">
+
             <ul class="links">
+
                 <li class="link">
                     <a href="#">
                         <span class="icon">
@@ -61,15 +66,23 @@
                     </a>
                 </li>
 
+               @*  <li class="link" >
+                        <a data-ajax-method="Get" data-ajax="true" data-ajax-url="/Product/ProductSettings" data-ajax-update="#panel">
+                            <span class="icon">
+                                <ion-icon name="help-outline"></ion-icon>
+                            </span>
+                            <span class="title">Product Settings</span>
+                        </a>
+                    </li> *@
                 <li class="link">
-                    <a data-ajax-method="Get" data-ajax="true" data-ajax-url="/Product/ProductSettings" data-ajax-update="#panel">
+                    <a asp-controller="Products" asp-action="ProductsIndex" data-ajax="true" data-ajax-method="Get" data-ajax-update="#panel">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>
                         <span class="title">Product Settings</span>
                     </a>
-                </li>
-
+                </li> 
+          
                 <li class="link">
                     <a href="#">
                         <span class="icon">
@@ -97,7 +110,9 @@
                     </a>
                 </li>
             </ul>
+
         </div>
+
     </div>
 
 
@@ -122,6 +137,7 @@
 
                
             </div>
+
         </div>
         
         <div id="panel">
@@ -143,7 +159,6 @@
 
     <script src="https://kit.fontawesome.com/ac72e5463b.js" crossorigin="anonymous"></script>
     <script src="~/js/toastScript.js"></script>
-
     <script src="~/js/AdminJS/scriptAdmin.js" ></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

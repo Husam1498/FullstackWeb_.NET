@@ -46,7 +46,11 @@ namespace Deneme_Net_Web.Controllers.Kullanıcı
                         ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 
                         //sisteme login yap
-                        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal);
+                        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal, new AuthenticationProperties
+                        {
+                            IsPersistent = true,//cookienin kalıcı olmasını sağlar
+                            ExpiresUtc = DateTime.UtcNow.AddDays(7)//7 gün boyunca 
+                        });
 
                         ViewData["Giris"] = "Olumlu";
 

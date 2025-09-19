@@ -1,4 +1,5 @@
 ﻿using DataAccess.Abstract;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Business.Abstract
 {
     public interface IProductService:IProductRepository
     {
+        //IEnumerable<Product> GetWithInclude();
     }
 }

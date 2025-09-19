@@ -38,6 +38,11 @@ namespace Business.Concrete
             return _repository.GetById(id);
         }
 
+        public IEnumerable<Product> GetWithIncludes()
+        {
+            return _repository.GetWithIncludes();
+        }
+
         public void Update(Product entity)
         {
             _repository.Update(entity);

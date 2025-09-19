@@ -13,9 +13,9 @@ namespace DataAccess.Concrete
         public DbSet<Kullanicilar> Kullanicilar { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Colors> Colors { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Product { get; set; }
         public DbSet<Sizes> Sizes { get; set; }
-        public DbSet<Photo> Photos { get; set; }
+        public DbSet<Photo> Photo { get; set; }
 
 
 

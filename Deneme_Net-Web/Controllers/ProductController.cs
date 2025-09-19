@@ -1,7 +1,9 @@
 ﻿
 using Business.Abstract;
+using Deneme_Net_Web.Models;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace Deneme_Net_Web.Controllers
 {
@@ -31,44 +33,6 @@ namespace Deneme_Net_Web.Controllers
         
             return View();
         }
-        
-        public IActionResult ProductSettings() { 
-        
-            return PartialView("_ProductSettingsPartial");
-        }
 
-
-       
-        public IActionResult AddProductWithDetail() {
-            
-            
-            ViewBag.Categories = _servisCategory.GetAll();
-            ViewBag.Colors=_servisColor.GetAll();
-            ViewBag.Sizes=_servisSizes.GetAll();
-
-
-
-            return PartialView("_addProductWithDetailPartial");
-        }
-        [HttpPost]
-        public IActionResult AddProductWithDetail(Product product, List<int> categoryIds, List<int> colorIds, List<int> sizeIds, List<string> photoUrls) {
-            /*
-             Product bir model oluşturiçerisinde id name,price gibi özelikler olsun sadece category colors ve sizes olmasın
-             
-             */
-            if (ModelState.IsValid) { 
-            
-                Product product1 = new Product();
-                
-            
-            }
-
-
-
-            return PartialView("_addProductWithDetailPartial");
-        }
-
-       
-      
     }
 }

@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class ProductİleİlgiliTablolar : Migration
+    public partial class İlkMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,11 +39,28 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Kullanicilar",
+                columns: table => new
+                {
+                    K_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Fullname = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    Username = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    ProfilImageFileName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Kullanicilar", x => x.K_id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Product",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -73,7 +91,7 @@ namespace DataAccess.Migrations
                     PhotoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     url = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -90,7 +108,7 @@ namespace DataAccess.Migrations
                 name: "ProductCategory",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -114,7 +132,7 @@ namespace DataAccess.Migrations
                 name: "ProductColor",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ColorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -138,7 +156,7 @@ namespace DataAccess.Migrations
                 name: "ProductSize",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SizeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -182,6 +200,9 @@ namespace DataAccess.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Kullanicilar");
+
             migrationBuilder.DropTable(
                 name: "Photo");
 
