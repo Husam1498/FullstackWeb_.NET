@@ -28,7 +28,15 @@ namespace Deneme_Net_Web.Controllers
             return PartialView("_ProductsIndexPartial");
         }
 
+        #region Urun Listeleme 
+        public IActionResult ListProducts()
+        {
+            IEnumerable<Product> products = _servisProduct.GetWithIncludes();
 
+            return PartialView("_listProducts",products);
+        }
+
+        #endregion
 
         #region ProductsEkleme
         public IActionResult AddProducts()

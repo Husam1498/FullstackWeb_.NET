@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Product>
+
+
+<div class="baslik-center">
+    <h2 class="title">Ürünleriniz</h2>
+</div>
+
+<div class="table">
+    <div class="table-section">
+        <table class="table-content">
+            <thead class="thead">
+                <tr>
+                    <th>No</th>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Catgory</th>
+                    <th>Color</th>
+                    <th>Sizes</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int no = 1;
+                }
+                @foreach( Product product in Model ){
+                    <tr>
+                        <td>@no</td>
+                        <td>
+                            <div class="image-carousel">                             
+                                <div class="image-track">
+                                    @foreach (Photo photo in product.Photos)
+                                    {
+                                        <img src="~/uploads/ProductsPhoto/@photo.url" />
+
+                                    }
+                                </div>                              
+                            </div>
+                           
+                                    
+                               
+                           
+                        </td>
+                        <td>@product.ProductName</td>
+                        <td class="description-cell">@product.Description</td>
+                        <td>@product.Price</td>
+                        <td>
+                            @foreach(ProductCategory c in product.ProductCategories)
+                            {
+                                <p> @c.Category.CategoryName</p>
+                            }
+                        </td>
+                        <td>
+                            @foreach (ProductColor color in product.ProductColors)
+                            {
+                                <p> @color.Color.ColorName</p>
+                            }
+                        </td>
+                        <td>
+                            @foreach (ProductSize size in product.ProductSizes)
+                            {
+                                <p> @size.Size.SizeShort</p>
+                            }
+                        </td>
+                        <td>
+                            <button><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    no++;
+                }
+
+            </tbody>
+        </table>
+    </div>
+@* 
+    <div class="pagination-table">
+        <div><i class="fa-solid fa-angles-left"></i></div>
+        <div><i class="fa-solid fa-chevron-left"></i></div>
+        <div>1</div>
+        <div>2</i></div>
+        <div><i class="fa-solid fa-chevron-right"></i></div>
+        <div><i class="fa-solid fa-angles-right"></i></div>
+    </div>
+ *@
+</div>

@@ -70,6 +70,128 @@
     background-color: var(--altRenk-2);
     transition: 0.3s;
 }
+
+/*Admin datalist Table*/
+.button_table {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.input_table {
+    padding: 10px 20px;
+    margin: 0 10px;
+    outline: none;
+    border: 1px solid #0298cf;
+    border-radius: 6px;
+}
+.table {
+    width: 100%;
+}
+
+.table-content {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.table-section {
+    height: 500px;
+    overflow: auto;
+}
+
+.thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--anaRenk);
+    color: var(--altRenk-2);
+    
+}
+
+.table-content th,
+td {
+    border-bottom: 1px solid #dddd;
+    padding: 10px 20px;
+   
+    text-align: center;
+}
+
+.table-content td img {
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid var(--anaRenk-2);
+}
+
+.table-content tr:hover {
+    color: var(--altRenk-2);
+    cursor: pointer;
+    background-color: var(--anaRenk-2);
+}
+
+.table-content td button {
+    padding: 10px;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.table-content td button:nth-child(1) {
+    background-color: #0298cf;
+}
+
+.table-content td button:nth-child(2) {
+    background-color: #f80000;
+}
+.description-cell {
+    max-width: 200px; /* Sabit genişlik */
+    white-space: ; /* Tek satırda tut */
+    overflow: hidden; /* Taşanı gizle */
+    text-overflow: ellipsis; /* ... ile kırp */
+}
+.description-cell:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    
+    z-index: 10;
+}
+
+
+.pagination-table {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    width: 100%;
+    background: #8493a5;
+}
+
+.pagination-table div {
+    padding: 10px;
+    border: 2px solid #d5d0d0;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0298cf;
+    color: #ffff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
 @media(max-width:768px) {
     .container3 {
         padding-inline: 2rem;

@@ -1,0 +1,29 @@
+﻿.image-carousel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.image-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-width: 200px; /* isteğe göre */
+}
+
+.image-track img {
+    margin-right: 2px;
+    flex-shrink: 0;
+  
+}
+
+.prev-btn, .next-btn {
+    
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.image-track::-webkit-scrollbar {
+    height: 6px; /* x yönü için yükseklik */
+}
