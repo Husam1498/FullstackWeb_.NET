@@ -6,76 +6,86 @@
 </div>
 
 <div class="table">
+
+
+    @if (Model.Count() == 0)
+    {
+        <p>Ürün Yok</p>
+    }
+    else
+    {
     <div class="table-section">
         <table class="table-content">
-            <thead class="thead">
-                <tr>
-                    <th>No</th>
-                    <th>Image</th>
-                    <th>Product Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Catgory</th>
-                    <th>Color</th>
-                    <th>Sizes</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    int no = 1;
-                }
-                @foreach( Product product in Model ){
+                <thead class="thead">
                     <tr>
-                        <td>@no</td>
-                        <td>
-                            <div class="image-carousel">                             
-                                <div class="image-track">
-                                    @foreach (Photo photo in product.Photos)
-                                    {
-                                        <img src="~/uploads/ProductsPhoto/@photo.url" />
+                        <th>No</th>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Catgory</th>
+                        <th>Color</th>
+                        <th>Sizes</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int no = 1;
+                    }
+                    @foreach( Product product in Model ){
+                        <tr>
+                            <td>@no</td>
+                            <td>
+                                <div class="image-carousel">                             
+                                    <div class="image-track">
+                                        @foreach (Photo photo in product.Photos)
+                                        {
+                                            <img src="~/uploads/ProductsPhoto/@photo.url" />
 
-                                    }
-                                </div>                              
-                            </div>
+                                        }
+                                    </div>                              
+                                </div>
                            
                                     
                                
                            
-                        </td>
-                        <td>@product.ProductName</td>
-                        <td class="description-cell">@product.Description</td>
-                        <td>@product.Price</td>
+                            </td>
+                            <td>@product.ProductName</td>
+                            <td class="description-cell">@product.Description</td>
+                            <td>@product.Price</td>
                      
-                        <td>
-                            @foreach(ProductCategory c in product.ProductCategories)
-                            {
-                                <p> @c.Category.CategoryName</p>
-                            }
-                        </td>
-                        <td>
-                            @foreach (ProductColor color in product.ProductColors)
-                            {
-                                <p> @color.Color.ColorName</p>
-                            }
-                        </td>
-                        <td>
-                            @foreach (ProductSize size in product.ProductSizes)
-                            {
-                                <p> @size.Size.SizeShort</p>
-                            }
-                        </td>
-                        <td>
+                            <td>
+                                @foreach(ProductCategory c in product.ProductCategories)
+                                {
+                                    <p> @c.Category.CategoryName</p>
+                                }
+                            </td>
+                            <td>
+                                @foreach (ProductColor color in product.ProductColors)
+                                {
+                                    <p> @color.Color.ColorName</p>
+                                }
+                            </td>
+                            <td>
+                                @foreach (ProductSize size in product.ProductSizes)
+                                {
+                                    <p> @size.Size.SizeShort</p>
+                                }
+                            </td>
+                            <td>
                            
-                            <a asp-action="UpdateProducts" asp-route-productId="@product.ProductId" data-ajax="true" data-ajax-method="Get" data-ajax-update="#panelProducts"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a><i class="fa-solid fa-trash"></i></a>
-                        </td>
-                    </tr>
-                    no++;
-                }
+                                <a asp-action="UpdateProducts" asp-route-productId="@product.ProductId" data-ajax="true" data-ajax-method="Get" data-ajax-update="#panelProducts"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a asp-action="DeleteProduct" asp-route-productId="@product.ProductId"
+                                   data-ajax="true" data-ajax-method="Get" data-ajax-update="#panelProducts" 
+                                   data-ajax-confirm="@product.ProductName Ürünü silmek istediğinize emin misiniz"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        no++;
+                    }
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
     </div>
 @* 
     <div class="pagination-table">
@@ -87,6 +97,8 @@
         <div><i class="fa-solid fa-angles-right"></i></div>
     </div>
  *@
+   
+    }
 </div>
 
 @section Scripts {

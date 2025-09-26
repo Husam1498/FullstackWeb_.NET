@@ -104,5 +104,36 @@ namespace DataAccess.Concrete
             //_servis.Photo.AddRange(newPhotos);
             _servis.SaveChanges();
         }
+
+        public void DeleteProduct(Guid productId)
+        {
+            var  product= GetWithIncludesProduct(productId);
+            if (product != null) {
+
+                // İlişkili verileri tek tek sil
+                _servis.ProductCategory.RemoveRange(_servis.ProductCategory.Where(pc => pc.ProductId == product.ProductId));
+                _servis.ProductColor.RemoveRange(_servis.ProductColor.Where(pc => pc.ProductId == product.ProductId));
+                _servis.ProductSize.RemoveRange(_servis.ProductSize.Where(ps => ps.ProductId == product.ProductId));
+                
+                foreach(var p in product.Photos)
+                {
+                    _servis.Photo.Remove(p);
+                    _servis.SaveChanges();
+                    // 2. Fiziksel dosyayı da sil
+                    var filePath = Path.Combine("wwwroot/uploads/ProductsPhoto", p.url);
+                    if (File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+                    }
+                }
+                // Ana ürünü sil
+                _servis.Product.Remove(product);
+                _servis.SaveChanges();
+
+
+            }
+
+
+        }
     }
 }

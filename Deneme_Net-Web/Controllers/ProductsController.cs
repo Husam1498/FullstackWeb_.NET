@@ -278,6 +278,24 @@ namespace Deneme_Net_Web.Controllers
 
         #endregion
 
+        #region Silme İşlemi
+
+        public IActionResult DeleteProduct(Guid productId)
+        {
+            if (productId != Guid.Empty)
+            { 
+            
+             
+                _servisProduct.DeleteProduct(productId);
+                return ListProducts();
+            }
+
+
+            return ListProducts();
+        }
+
+
+        #endregion
 
 
 

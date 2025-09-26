@@ -13,5 +13,6 @@ namespace DataAccess.Abstract
         Product GetWithIncludesProduct(Guid id);
         void UpdateProduct(Product product);
         void DeletePhoto(int photoId);
+        public void DeleteProduct(Guid productId);
     }
 }

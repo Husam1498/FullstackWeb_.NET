@@ -33,6 +33,11 @@ namespace Business.Concrete
             _repository.DeletePhoto(photoId);
         }
 
+        public void DeleteProduct(Guid productId)
+        {
+           _repository.DeleteProduct(productId);
+        }
+
         public List<Product> GetAll()
         {
             return _repository.GetAll();
