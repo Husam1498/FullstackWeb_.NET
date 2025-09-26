@@ -9,8 +9,8 @@ namespace Entities
 {
     public class Photo
     {
-        [Key] 
-        public int PhotoId { get; set; }
+        
+        public int? PhotoId { get; set; }
 
         public string url { get; set; }
         public Guid ProductId { get; set; }

@@ -28,9 +28,19 @@ namespace Business.Concrete
             _repository.Delete(entity);
         }
 
+        public void DeletePhoto(int photoId)
+        {
+            _repository.DeletePhoto(photoId);
+        }
+
         public List<Product> GetAll()
         {
             return _repository.GetAll();
+        }
+
+        public Product GetByGuid(Guid id)
+        {
+            return _repository.GetByGuid(id);
         }
 
         public Product GetById(int id)
@@ -43,9 +53,19 @@ namespace Business.Concrete
             return _repository.GetWithIncludes();
         }
 
+        public Product GetWithIncludesProduct(Guid id)
+        {
+           return _repository.GetWithIncludesProduct(id);
+        }
+
         public void Update(Product entity)
         {
             _repository.Update(entity);
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            _repository.UpdateProduct(product);
         }
     }
 }

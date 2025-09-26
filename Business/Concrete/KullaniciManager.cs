@@ -2,7 +2,6 @@
 using DataAccess.Abstract;
 using Entities;
 
-
 namespace Business.Concrete
 {
     public class KullaniciManager : IKullaniciService
@@ -33,6 +32,11 @@ namespace Business.Concrete
         public List<Kullanicilar> GetAll()
         {
             return _kullaniciRepository.GetAll();
+        }
+
+        public Kullanicilar GetByGuid(Guid id)
+        {
+           return _kullaniciRepository.GetByGuid(id);
         }
 
         public Kullanicilar GetById(int id)

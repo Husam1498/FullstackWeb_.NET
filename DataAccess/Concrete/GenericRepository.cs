@@ -37,6 +37,15 @@ namespace DataAccess.Concrete
             }
         }
 
+        public TEntity GetByGuid(Guid id)
+        {
+            using (var context = new TContext())
+            {
+                return context.Set<TEntity>().Find(id);
+
+            }
+        }
+
         public TEntity GetById(int id)
         {
             using (var context = new TContext())

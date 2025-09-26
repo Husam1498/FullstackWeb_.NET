@@ -16,6 +16,11 @@ namespace DataAccess.Concrete
         public DbSet<Product> Product { get; set; }
         public DbSet<Sizes> Sizes { get; set; }
         public DbSet<Photo> Photo { get; set; }
+        public DbSet<ProductCategory> ProductCategory { get; set; }
+        public DbSet<ProductColor> ProductColor { get; set; }
+        public DbSet<ProductSize> ProductSize { get; set; }
+       
+
 
 
 
@@ -71,6 +76,20 @@ namespace DataAccess.Concrete
                 .HasOne(pc => pc.Color)
                 .WithMany(c => c.ProductColors)
                 .HasForeignKey(pc => pc.ColorId);
+            modelBuilder.Entity<Photo>()
+                .Property(p => p.PhotoId)
+                .ValueGeneratedOnAdd();
+
+
+            modelBuilder.Entity<ProductCategory>().ToTable("ProductCategory");
+            modelBuilder.Entity<ProductColor>().ToTable("ProductColor");
+            modelBuilder.Entity<ProductSize>().ToTable("ProductSize");
+            modelBuilder.Entity<Photo>().ToTable("Photo");
+            modelBuilder.Entity<Product>().ToTable("Product");
+            modelBuilder.Entity<Category>().ToTable("Category");
+            modelBuilder.Entity<Colors>().ToTable("Colors");
+            modelBuilder.Entity<Sizes>().ToTable("Sizes");
+
 
         }
     }

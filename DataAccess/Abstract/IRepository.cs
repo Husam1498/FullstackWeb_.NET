@@ -9,6 +9,7 @@ namespace DataAccess.Abstract
     public interface IRepository<TEntity>
     {
         TEntity GetById(int id);
+        TEntity GetByGuid(Guid id);
         List<TEntity> GetAll();
         void Create(TEntity entity);
         void Update(TEntity entity);

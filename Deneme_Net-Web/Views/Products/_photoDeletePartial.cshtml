@@ -1,0 +1,28 @@
+﻿
+@model List<Photo>
+@if(Model!= null)
+{
+    <div class="carousel_container2">
+    @foreach (var p in Model)
+    {
+        
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="~/uploads/ProductsPhoto/@p.url" />
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details-content">
+                        <div class="favorite">
+
+
+                            <a asp-action="DeletePhotoUppdate" asp-route-productId="@p.ProductId" asp-route-photoId="@p.PhotoId"
+                               data-ajax-method="get" data-ajax="true" data-ajax-update="#photoPanel" data-ajax-confirm="@p.url fotoğrafı silmek istediğinize emin misiniz">
+                                <i class="fa-solid fa-trash" style="color: #f60404;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+    }
+
+    </div>
+}

@@ -36,7 +36,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Category");
+                    b.ToTable("Category", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Colors", b =>
@@ -57,7 +57,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ColorId");
 
-                    b.ToTable("Colors");
+                    b.ToTable("Colors", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Kullanicilar", b =>
@@ -98,7 +98,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("K_id");
 
-                    b.ToTable("Kullanicilar");
+                    b.ToTable("Kullanicilar", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Photo", b =>
@@ -120,7 +120,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Photo");
+                    b.ToTable("Photo", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Product", b =>
@@ -142,7 +142,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Product", (string)null);
                 });
 
             modelBuilder.Entity("Entities.ProductCategory", b =>
@@ -157,7 +157,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductCategory");
+                    b.ToTable("ProductCategory", (string)null);
                 });
 
             modelBuilder.Entity("Entities.ProductColor", b =>
@@ -172,7 +172,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("ColorId");
 
-                    b.ToTable("ProductColor");
+                    b.ToTable("ProductColor", (string)null);
                 });
 
             modelBuilder.Entity("Entities.ProductSize", b =>
@@ -187,7 +187,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SizeId");
 
-                    b.ToTable("ProductSize");
+                    b.ToTable("ProductSize", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Sizes", b =>
@@ -208,7 +208,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("SizeId");
 
-                    b.ToTable("Sizes");
+                    b.ToTable("Sizes", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Photo", b =>

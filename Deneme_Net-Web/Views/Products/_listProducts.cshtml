@@ -46,6 +46,7 @@
                         <td>@product.ProductName</td>
                         <td class="description-cell">@product.Description</td>
                         <td>@product.Price</td>
+                     
                         <td>
                             @foreach(ProductCategory c in product.ProductCategories)
                             {
@@ -65,8 +66,9 @@
                             }
                         </td>
                         <td>
-                            <button><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button><i class="fa-solid fa-trash"></i></button>
+                           
+                            <a asp-action="UpdateProducts" asp-route-productId="@product.ProductId" data-ajax="true" data-ajax-method="Get" data-ajax-update="#panelProducts"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     no++;
@@ -86,3 +88,8 @@
     </div>
  *@
 </div>
+
+@section Scripts {
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+
+}

@@ -33,6 +33,11 @@ namespace Business.Concrete
             return _repository.GetAll();
         }
 
+        public Photo GetByGuid(Guid id)
+        {
+            return _repository.GetByGuid(id);
+        }
+
         public Photo GetById(int id)
         {
             return _repository.GetById(id);
