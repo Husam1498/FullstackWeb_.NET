@@ -18,6 +18,11 @@ namespace Business.Concrete
             _repository = categoryService;
         }
 
+        public void CategoryDeleteProduct(int id)
+        {
+           _repository.CategoryDeleteProduct(id);
+        }
+
         public void Create(Category entity)
         {
            _repository.Create(entity);

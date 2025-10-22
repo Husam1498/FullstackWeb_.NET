@@ -1,0 +1,29 @@
+﻿@model Category
+
+
+<div class="modal" style="--m-shadow: 0 0 10rem 0">
+    <h1 class="modal__title">Update Catgeory</h1>
+    <div class="form-group">
+        <div class="changeFullname">
+            <form id="updateForm" class="form-flex-btn" asp-controller="Kategori" asp-action="CategoryUpdate" data-ajax="true"
+                  data-ajax-method="post" data-ajax-update="#panelSettings" data-ajax-success="closeModal()">
+                <div class="input">
+                    <label>Kategori İsmi</label>
+                    <div class="div-input">
+                        <input asp-for="@Model.CategoryId" type="hidden"/>
+                        <input asp-route-id="@Model.CategoryId" asp-for="CategoryName" value="@Model.CategoryName" class="form-input" type="text" dynamicInput />
+                        <i class="fa-regular fa-object-ungroup"></i>
+                    </div>
+                    @*  <span asp-validation-for="categoryName" class="uyarı"></span> *@
+                </div>
+                
+            </form>
+        </div>
+
+    </div>
+    
+    <button type="submit" form="updateForm" class="modal__btn">Kaydet</button>
+    <a onclick="closeModal()" class="link-2"></a>
+</div>
+
+

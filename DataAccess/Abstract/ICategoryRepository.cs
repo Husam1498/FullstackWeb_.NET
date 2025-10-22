@@ -9,5 +9,7 @@ namespace DataAccess.Abstract
 {
     public interface ICategoryRepository:IRepository<Category>
     {
+
+        public void CategoryDeleteProduct(int id);  
     }
 }

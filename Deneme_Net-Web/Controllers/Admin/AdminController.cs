@@ -54,30 +54,26 @@ namespace Deneme_Net_Web.Controllers.Admin
                 int userId = Int32.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 Kullanicilar user = servisK.GetById(userId);
 
-                string folderpath = Path.Combine($"wwwroot/Uploads/", user.ProfilImageFileName);
-                if (System.IO.File.Exists(folderpath))
+                string fileName = $"{user.K_id}_{file.FileName.Split('.')[0]}.{file.ContentType.Split('/')[1]}";
+
+                Stream stream = new FileStream($"wwwroot/uploads/Kullanici/{fileName}", FileMode.OpenOrCreate);
+
+                var oldPath = Path.Combine("wwwroot/uploads/Kullanici", user.ProfilImageFileName);
+                if (System.IO.File.Exists(oldPath))
                 {
-                    System.IO.File.Delete(folderpath);
+                    System.IO.File.Delete(oldPath);
                 }
-
-                string fileName = $"p_{userId}.{file.ContentType.Split('/')[1]}";//ContentType=image/jpg =>jpg||png||jpeg
-
-                Stream stream = new FileStream($"wwwroot/uploads/{fileName}", FileMode.OpenOrCreate);
                 file.CopyTo(stream);
                 stream.Close();
-            
+                stream.Dispose();          
                 user.ProfilImageFileName = fileName;
                 servisK.Update(user);
                 TempData["Toast"] = "Resim";
                 ProfileinfoLoader();
 
                 return RedirectToAction(nameof(AdminProfile));
-            }
-         
-
-
-            return View();
-        
+            }        
+            return View();        
         }
 
         [HttpPost]

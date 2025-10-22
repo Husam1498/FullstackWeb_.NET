@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\uploads\Kullanici\" />
     <Folder Include="wwwroot\uploads\ProductsPhoto\" />
   </ItemGroup>
 

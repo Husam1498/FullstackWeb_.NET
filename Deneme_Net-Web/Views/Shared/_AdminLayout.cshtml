@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="~/css/AdminCss/addProductPartial.css" />
     <link rel="stylesheet" href="~/css/carouselImage.css" />
     <link rel="stylesheet" href="~/css/productDetails.css" />
+    <link rel="stylesheet" href="~/css/modal.css" />
     <link rel="stylesheet" href="~/css/AdminCss/Responsive.css" />
     <link href="~/css/productindex.css" rel="stylesheet" />
+
     
     
 </head>
@@ -68,16 +70,7 @@
                         </span>
                         <span class="title">Messages</span>
                     </a>
-                </li>
-
-               @*  <li class="link" >
-                        <a data-ajax-method="Get" data-ajax="true" data-ajax-url="/Product/ProductSettings" data-ajax-update="#panel">
-                            <span class="icon">
-                                <ion-icon name="help-outline"></ion-icon>
-                            </span>
-                            <span class="title">Product Settings</span>
-                        </a>
-                    </li> *@
+                </li>     
                 <li class="link">
                     <a asp-controller="Products" asp-action="ProductsIndex" data-ajax="true" data-ajax-method="Get" data-ajax-update="#panel">
                         <span class="icon">
@@ -85,16 +78,17 @@
                         </span>
                         <span class="title">Product Settings</span>
                     </a>
-                </li> 
-          
+                </li>
+
                 <li class="link">
-                    <a href="#">
+                    <a asp-controller="Settings" asp-action="SettingsIndex" data-ajax="true" data-ajax-method="Get" data-ajax-update="#panel">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">Settings</span>
                     </a>
                 </li>
+             
 
                 <li class="link">
                     <a href="#">
@@ -136,7 +130,7 @@
 
             <div class="user">
                 <a asp-controller="Admin" asp-action="AdminProfile" adminProfile>
-                    <img src="~/uploads/@ViewData["Profileİmage"] "  />
+                    <img src="~/uploads/Kullanici/@ViewData["Profileİmage"]" />
                 </a>
 
                

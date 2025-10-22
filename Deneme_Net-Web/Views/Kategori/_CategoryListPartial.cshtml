@@ -1,0 +1,122 @@
+﻿@model List<Category>
+
+<h1 class="title-form">Kategori Sayfası</h1>
+<!-- ====================Order Details List=========== -->
+<div class="details">
+    <div class="recentOrders" style="min-height:0px">
+        <div class="cardHeader">
+            <h2>Kategoriler</h2>
+            <a asp-action="CategoryList" asp-controller="Kategori" data-ajax="true"
+            data-ajax-method="Get" data-ajax-update="#panelSettings" data-ajax-loading="true" class="btnR">Reload</a>
+        </div>
+        <table class="detailsTable">
+            <thead>
+                <tr>
+                    <td style="text-align:center ">No</td>
+                    <td style="text-align:center ">Catgegory Name</td>
+                    <td style="text-align:center ">Actions</td>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int no = 1;
+                }
+                @foreach(var category in Model)
+                {
+                    <tr>
+                        <td style="text-align:center ">@no</td>
+                        <td style="text-align:center ">@category.CategoryName</td>
+                        <td style="text-align:center ">
+                            <a asp-action="CategoryUpdate" asp-route-id="@category.CategoryId"
+                               data-ajax="true" data-ajax-method="Get" data-ajax-update="#m3-o" data-ajax-success="showModal()">
+                            <i class="fa-solid fa-pen-to-square " style="color:#15e811"></i></a>
+
+                            <a asp-action="CategoryDelete" asp-route-id="@category.CategoryId"
+                                data-ajax="true" data-ajax-method="Get" data-ajax-update="#panelProducts"
+                               data-ajax-confirm="@category.CategoryName Kategorisini silmek istediğinize emin misiniz"><i class="fa-solid fa-trash" style="color:#e81111"></i></a>
+                           
+                        </td>
+                    </tr>
+                }
+              
+             
+            </tbody>
+        </table>
+    </div>
+
+    <div class="form-group">
+        <div class="changeFullname">
+            <form class="form-flex-btn" asp-controller="Kategori" asp-action="CategoryAdd" data-ajax="true"
+                  data-ajax-method="post" data-ajax-update="#panelSettings">
+                <div class="input">
+                    <label>Kategori İsmi</label>
+                    <div class="div-input">
+                        <input name="categoryName" class="form-input" type="text"  dynamicInput />
+                        <i class="fa-regular fa-object-ungroup"></i>
+                    </div>
+                   @*  <span asp-validation-for="categoryName" class="uyarı"></span> *@
+                </div>
+                <button class="btn-form5"><i class="fa-regular fa-floppy-disk"></i> Ekle </button>
+            </form>
+        </div>
+
+    </div>
+  
+</div>
+
+<div class="box">
+
+    <div class="modal-container" id="m3-o" style="--m-background: var(--global-background);">
+      
+    </div>
+</div>
+
+@if (TempData["CategoryName"]?.ToString() == "Basarili")
+{
+    <script>
+        createToastSuccess("Başarılı", "Ürün Basarılı bir şekilde eklendi");
+        urunEkle.click();
+    </script>
+
+}
+@if (TempData["CategoryName"]?.ToString() == "Başarısız")
+{
+    <script>      
+        createToastWarning("Başarısız", "Kategori adı boş olmamamalı ve  en az 4 karakter olmalı ");
+    </script>
+
+}
+
+@if (TempData["CategoryUpdate"]?.ToString() == "Basarili" || TempData["CategoryDelete"]?.ToString() == "Basarili")
+{
+    <script>
+        createToastSuccess("Başarılı", "Kategori Basarılı bir şekilde Güncelendi");
+        function closeModal() {
+            document.getElementById("m3-o").classList.remove("active");
+        }
+    </script>
+
+}
+
+@if (TempData["CategoryUpdate"]?.ToString() == "Başarısız" || TempData["CategoryDelete"]?.ToString() == "Basarili")
+{
+    <script>
+        createToastWarning("Başarısız", "Kategori adı boş olmamamalı ve  en az 4 karakter olmalı ");
+        function closeModal() {
+            document.getElementById("m3-o").classList.remove("active");
+        }
+    </script>
+
+}
+
+<script>
+    function showModal() {
+        document.getElementById("m3-o").classList.add("active");
+    }
+    function closeModal() {
+        document.getElementById("m3-o").classList.remove("active");
+    }
+</script>
+
+
