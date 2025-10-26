@@ -85,6 +85,16 @@ Concrete Klasorunun içinde olan MsSqlContext.cs deki Server adýnýzý girin
  </p> 
  </details>
 
+ <hr> </hr>
+  <h2 style="text-align:center">4-Tanýtým Videosu </h2>
+  <p> Proje Tam Hali bu deðildir 26:10:2025 tarihinde 
+  çekilmiþtir. Proje geliþtirilmeye devam edilmektedir</p>
+  <img src="https://drive.google.com/file/d/1fWPRwzzSma5f7hkVfc-Ku5DKm14-rQqh/view?usp=sharing"> 
+  </img>
+
+
+
+
 
 
 
