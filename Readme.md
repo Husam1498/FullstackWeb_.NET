@@ -1,10 +1,12 @@
 <h1 style="text-align:center"> 1-Hello E-Ticaret Sitesi</h1>
 <hr></hr>
-<p style ="color: #7d6e6d;" >Merhaba Bu yapmak istediðim proje Asp.netCore ile mvc yapýsýný öðrenmek istenler için 
-; Bir þirketin Web sitesini özeleþtirebilir ve deðiþtirilebilir
-bir yapýda bir uygulama geliþtirmek,Örneðin kullanýcý
-web arayüsünde hangi kategorilerin görüneceðini veya web ara yüzündeki
-navbar,button renklerini kendi þirketine ait renklere dönüþtürebilecektir.
+<p style ="color: #7d6e6d;" >Bu proje, ASP.NET Core ile MVC yapýsýný öðrenmek isteyenler için
+tasarlanmýþtýr. Amaç, bir þirketin web sitesini 
+özelleþtirilebilir ve deðiþtirilebilir bir yapýda
+geliþtirmektir. Örneðin, kullanýcý web arayüzünde
+hangi kategorilerin görüneceðini belirleyebilecek 
+veya navbar ve buton renklerini kendi þirketine ait
+kurumsal renklere dönüþtürebilecektir..</p>
 <h5>Peki projede Neler Hangi teknolojiler kullanýldý</h5>
 <ul style ="color: #7d6e6d;">
 <li>Visul Studio 2022</li>
@@ -17,22 +19,33 @@ navbar,button renklerini kendi þirketine ait renklere dönüþtürebilecektir.
 <ul style ="color: #cfb9b8;">
 <li> 
 	<p>
-		Kuruluma Baþlamak için Bilgisayarýnýzda 
-		.net 8 veya üzeri bir bir sürüme ihtiyacýnýz vardýr
-		ve ben Veri tabaný Olarak Microsoft SQL Server Management Stdio  kullandýðým için sizde olmasý gerekiyor	
+		Kuruluma baþlamak için bilgisayarýnýzda 
+		.NET 8 veya üzeri bir sürümün yüklü 
+		olmasý gerekmektedir. Ayrýca, veri tabaný
+		olarak Microsoft SQL Server Management Studio
+		kullandýðým için sizin bilgisayarýnýzda da
+		bu yazýlýmýn kurulu olmasý gerekir.	
 	</p>
 </li>
-<li>Ýlk Adýmý tamamladýktan sonra Projeyi açýn ve DataAcces ClassLÝbrarye gelerek
-Concrete Klasorunun içinde olan MsSqlContext.cs deki Server adýnýzý girin
-
+<li>
+	Ýlk adýmý tamamladýktan sonra projeyi
+	açýn ve DataAccess Class Library bölümüne gidin
+	. Ardýndan, Concrete klasörü içinde yer alan
+	MsSqlContext.cs dosyasýndaki Server alanýna 
+	kendi bilgisayarýnýzdaki SQL Server adýný girin.
 	
 </li>
 <li>Nuget consoldan Data Acces katmanýna gelip 
 	<p style ="color:#cfb;" > Update-Database</p> diyip veri tabanýný oluþturun
 </li>
-<li> Veri Tabaný Baþarýlý Bir þekilde Oluþtuysa  projeyi çalýþtýrýn
-	Þuan Seed Data Oluþturmadýðým için Default kullanýcý yoktur onun içiin Giriþ için Veri tabanýnda 
-	Kullanicilar Tablosuna bir kullanýcý ekleyin ve rolün "admin" yapýn.
+<li> Veri tabaný baþarýyla oluþturulduysa
+projeyi çalýþtýrabilirsiniz. Þu anda Seed Data
+tanýmlanmadýðý için varsayýlan bir kullanýcý 
+bulunmamaktadýr. Bu nedenle giriþ yapabilmek
+için veri tabanýndaki Kullanicilar tablosuna
+manuel olarak bir kullanýcý ekleyip rolünü admin
+olarak ayarlamanýz gerekmektedir
+
 </li>
 
 </ul>
